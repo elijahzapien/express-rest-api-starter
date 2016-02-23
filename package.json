@@ -1,0 +1,23 @@
+{
+  "name": "express-rest-api-starter",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "private": true,
+  "description": "Boilerplate for building a RESTful API using Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elijahzapien/express-rest-api-starter.git"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.4"
+  }
+}
