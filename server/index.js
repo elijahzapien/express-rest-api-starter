@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import db from './db';
 
 const server = express();
 
