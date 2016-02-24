@@ -6,7 +6,7 @@
             [
                 { "src": "./src/middleware", "expose": "middleware" },
                 { "src": "./src/db", "expose": "db" },
-                { "src": "./src/schemas", "expose": "schemas" },
+                { "src": "./src/models", "expose": "models" },
                 { "src": "./src/routes", "expose": "routes" }
             ]
         ]

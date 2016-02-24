@@ -6,7 +6,7 @@
   },
   "private": true,
   "description": "Boilerplate for building a RESTful API using Express",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "build": "babel src -d dist",
