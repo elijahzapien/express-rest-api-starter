@@ -1,8 +1,8 @@
 # Express RESTful API Boilerplate
 
 - [ECMAScript6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
-- [babel](https://babeljs.io/) 6.0.15
-- [express](http://expressjs.com/) 4.13.1
+- [babel](https://babeljs.io/) 6.5.1
+- [express](http://expressjs.com/) 4.13.4
 
 ## Getting Started
 
@@ -12,9 +12,17 @@
 $ npm install
 ```
 
-#### 2. Run api
+#### 2. Run API:
+
+Start a local dev environment:
 
 ```
-$ npm start
+$ npm dev
+```
+
+Start a production build:
+
+```
+$ npm production
 ```
 
