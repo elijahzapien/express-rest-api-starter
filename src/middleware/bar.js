@@ -1,11 +1,16 @@
-export default function(router) {
+export default function(router, debug) {
 
-    console.log('Bar middleware found');
+    // log initialize
+    debug('Adding Bar middleware');
 
+    // mount
     router.use((req, res, next) => {
-        console.log('Bar middleware triggered');
+        debug('Bar middleware triggered');
         next();
     });
+
+    // log complete
+    debug('Bar middleware added');
 
 }
 

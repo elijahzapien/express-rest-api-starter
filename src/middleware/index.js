@@ -1,9 +1,14 @@
 import bar from './bar';
 
-export default function(router) {
+export default function(router, debug) {
 
-    console.log('all middleware found');
+    // log initialize
+    debug('Adding middleware');
 
-    bar(router);
+    // mount
+    bar(router, debug);
+
+    // log complete
+    debug('All middleware added');
 
 };

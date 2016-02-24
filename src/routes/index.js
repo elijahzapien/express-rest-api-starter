@@ -1,10 +1,15 @@
 import foo from './foo';
 
-export default function(router) {
+export default function(router, debug) {
 
-    console.log('all routes found');
+    // log initialize
+    debug('Adding routes');
 
-    foo(router);
+    // mount
+    foo(router, debug);
+
+    // log complete
+    debug('All routes added');
 
 };
 

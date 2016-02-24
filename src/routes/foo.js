@@ -1,8 +1,9 @@
 import Foo from '../models/foo';
 
-export default function(router) {
+export default function(router, debug) {
 
-    console.log('Foo routes found');
+    // log initialize
+    debug('Adding Foo routes');
 
     router.route('/foo')
         .post((req, res) => {
@@ -10,7 +11,7 @@ export default function(router) {
             const foo = new Foo();
             foo.name = req.body.name;
 
-            console.log('foo post triggered:', foo);
+            debug('foo post triggered:', foo);
 
             // db
             // save foo / check for errors
@@ -22,6 +23,9 @@ export default function(router) {
             */
 
         });
+
+    // log complete
+    debug('Foo routes added');
 
 }
 
