@@ -8,7 +8,6 @@ import User from '../models/user';
  * /api/users - GET - Get all users
  * /api/users - POST - Create a users
  * /api/users/:user_id - GET - Get a single user
- * /api/users/:users_id - PUT - Update a single user
  * /api/users/:users_id - DELETE - Delete a single user
  *
  */

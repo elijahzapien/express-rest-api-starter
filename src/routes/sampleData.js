@@ -14,13 +14,13 @@ export default function(router) {
 
     const sampleUser = {
         name: 'Devin',
-        email: 'devin@allday.com'
+        email: 'devin@allday.com',
         password: 'tornadowrangler',
         admin: true
     };
 
     const sampleFoo = new Foo({
-        name: 'Bar'
+        name: 'Devin'
     });
 
     // http://localhost:8080/api/sampleData
