@@ -19,7 +19,7 @@ UserSchema.pre('save', function(next) {
 
         // match found
         // user already exists
-        return next( new Error('User already exists!') );
+        return next( new Error('User already exists') );
     });
 });
 

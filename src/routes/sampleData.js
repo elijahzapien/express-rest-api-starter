@@ -39,7 +39,7 @@ export default function(router) {
 
                         sampleFoo.save(err => {
                             if (err) res.send(err);
-                            res.json({ message: 'SampleData created!' });
+                            res.json({ message: 'SampleData created' });
                         });
                     });
                 });

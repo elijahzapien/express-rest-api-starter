@@ -24,7 +24,7 @@ export default function(router) {
 
             foo.save(err => {
                 if (err) res.send(err);
-                res.json({ message: 'Foo created!' });
+                res.json({ message: 'Foo created' });
             });
         })
         .get((req, res) => {
@@ -50,7 +50,7 @@ export default function(router) {
 
                 foo.save(err => {
                     if (err) res.send(err);
-                    res.json({ message: 'Foo updated!' });
+                    res.json({ message: 'Foo updated' });
                 });
             });
         })
@@ -59,7 +59,7 @@ export default function(router) {
                 { _id: req.params.foo_id },
                 (err, foo) => {
                     if (err) res.send(err);
-                    res.json({ message: 'Foo successfully deleted!' });
+                    res.json({ message: 'Foo successfully deleted' });
                 }
             );
         });
