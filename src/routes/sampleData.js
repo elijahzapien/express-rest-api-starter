@@ -28,11 +28,12 @@ export default function(router) {
         .post((req, res) => {
             bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(sampleUser.password, salt, (err, hash) => {
-                    const user = new User();
-                    user.name = sampleUser.name;
-                    user.email = sampleUser.email;
-                    user.password = hash;
-                    user.admin = sampleUser.admin;
+                    const user = new User({
+                        name: sampleUser.name,
+                        email: sampleUser.email,
+                        password: hash,
+                        admin: sampleUser.admin
+                    });
 
                     user.save(err => {
                         if (err) res.send(err);

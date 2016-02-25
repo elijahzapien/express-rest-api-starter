@@ -12,6 +12,13 @@ import User from '../models/user';
  *
  */
 
+/*
+ * TODO
+ * ----
+ *
+ * Add JWT authentication
+ */
+
 export default function(router) {
 
     // collection
@@ -43,14 +50,14 @@ export default function(router) {
     // single documents
     router.route('/users/:user_email')
         .get((req, res) => {
-            User.findById(req.params.user_id, (err, user) => {
+            User.findById(req.params.user_email, (err, user) => {
                 if (err) return res.send(err);
                 res.json(user);
             });
         })
         .delete((req, res) => {
             User.remove(
-                { _id: req.params.user_id },
+                { email: req.params.user_email },
                 (err, user) => {
                     if (err) return res.send(err);
                     res.json({ message: 'User successfully deleted' });

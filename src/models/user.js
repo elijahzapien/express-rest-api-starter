@@ -10,6 +10,12 @@ const UserSchema = new Schema({
 
 const UserModel = mongoose.model('User', UserSchema);
 
+/*
+ * TODO
+ * ----
+ * move pre check to middleware folder? (middleware/users.js)
+ */
+
 // pre-save middleware
 UserSchema.pre('save', function(next) {
     UserModel.find(
