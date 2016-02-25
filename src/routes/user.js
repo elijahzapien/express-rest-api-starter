@@ -19,13 +19,15 @@ export default function(router) {
         .post((req, res) => {
             bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(req.body.password, salt, (err, hash) => {
-                    const user = new User();
-                    user.name = req.body.name;
-                    user.password = hash;
-                    user.admin = req.body.admin;
+                    const user = new User({
+                        name: req.body.name,
+                        email: req.body.email,
+                        password: hash,
+                        admin: req.body.admin
+                    });
 
                     user.save(err => {
-                        if (err) res.send(err);
+                        if (err) return res.send(err);
                         res.json({ message: 'User created!' });
                     });
                 });
@@ -33,16 +35,16 @@ export default function(router) {
         })
         .get((req, res) => {
             User.find((err, users) => {
-                if (err) res.send(err);
+                if (err) return res.send(err);
                 res.json(users);
             });
         });
 
     // single documents
-    router.route('/users/:user_id')
+    router.route('/users/:user_email')
         .get((req, res) => {
             User.findById(req.params.user_id, (err, user) => {
-                if (err) res.send(err);
+                if (err) return res.send(err);
                 res.json(user);
             });
         })
@@ -50,7 +52,7 @@ export default function(router) {
             User.remove(
                 { _id: req.params.user_id },
                 (err, user) => {
-                    if (err) res.send(err);
+                    if (err) return res.send(err);
                     res.json({ message: 'User successfully deleted!' });
                 }
             );
