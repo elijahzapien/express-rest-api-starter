@@ -1,6 +1,3 @@
-// Connect to DB here
-// ------------------
-
 import settings from '../settings';
 import mongoose from 'mongoose';
 
