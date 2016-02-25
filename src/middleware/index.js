@@ -6,7 +6,7 @@ export default function(router, debug) {
     debug('Adding middleware');
 
     // mount
-    bar(router, debug);
+    bar(router);
 
     // log complete
     debug('All middleware added');

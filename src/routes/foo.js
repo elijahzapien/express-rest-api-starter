@@ -12,13 +12,10 @@ import Foo from '../models/foo';
  *
  */
 
-export default function(router, debug) {
-
-    // log initialize
-    debug('Adding Foo routes');
+export default function(router) {
 
     // collection
-    router.route('/foo')
+    router.route('/foos')
         .post((req, res) => {
             const foo = new Foo();
             foo.name = req.body.name;
@@ -38,7 +35,7 @@ export default function(router, debug) {
         });
 
     // single documents
-    router.route('/foo/:foo_id')
+    router.route('/foos/:foo_id')
         .get((req, res) => {
             Foo.findById(req.params.foo_id, (err, foo) => {
                 if (err) res.send(err);
@@ -66,9 +63,6 @@ export default function(router, debug) {
                 }
             );
         });
-
-    // log complete
-    debug('Foo routes added');
 
 }
 

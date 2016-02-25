@@ -6,6 +6,8 @@ import db from 'db';
 import middleware from 'middleware';
 import routes from 'routes'
 
+const server = express();
+
 // DEBUGGING
 // ---------
 const debugServer = d('Server');
@@ -13,8 +15,8 @@ const debugDB = d('Server:db');
 const debugMiddleware = d('Server:middleware');
 const debugRoute = d('Server:route');
 
-const server = express();
-
+// CONFIG
+// ------
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 server.use(express.static(__dirname + '/dist'));
