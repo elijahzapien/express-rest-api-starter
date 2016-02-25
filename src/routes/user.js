@@ -28,7 +28,7 @@ export default function(router) {
 
                     user.save(err => {
                         if (err) return res.send(err);
-                        res.json({ message: 'User created!' });
+                        res.json({ message: 'User created' });
                     });
                 });
             });
@@ -53,7 +53,7 @@ export default function(router) {
                 { _id: req.params.user_id },
                 (err, user) => {
                     if (err) return res.send(err);
-                    res.json({ message: 'User successfully deleted!' });
+                    res.json({ message: 'User successfully deleted' });
                 }
             );
         });
