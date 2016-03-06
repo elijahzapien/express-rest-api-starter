@@ -4,10 +4,10 @@
         [
             "babel-plugin-module-alias",
             [
-                { "src": "./src/middleware", "expose": "middleware" },
                 { "src": "./src/db", "expose": "db" },
                 { "src": "./src/models", "expose": "models" },
-                { "src": "./src/routes", "expose": "routes" }
+                { "src": "./src/middleware", "expose": "middleware" },
+                { "src": "./src/controllers", "expose": "controllers" }
             ]
         ]
     ]

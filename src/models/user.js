@@ -8,29 +8,9 @@ const UserSchema = new Schema({
     admin: Boolean
 });
 
-const UserModel = mongoose.model('User', UserSchema);
+//const UserModel = mongoose.model('User', UserSchema);
 
-/*
- * TODO
- * ----
- * move pre check to middleware folder? (middleware/users.js)
- */
+//UserModel.schema.pre('save', userMiddleware);
 
-// pre-save middleware
-UserSchema.pre('save', function(next) {
-    UserModel.find(
-        {email: this.email},
-        (err, docs) => {
-            // no matching document found
-            // continue with save
-            if (!docs.length) return next();
-
-            // user already exists
-            // do not save
-            return next( new Error('User already exists') );
-        }
-    );
-});
-
-export default UserModel;
+export default mongoose.model('User', UserSchema);
 

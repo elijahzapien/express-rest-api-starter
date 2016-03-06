@@ -1,10 +1,12 @@
-export default function(router) {
+/*
+ * Example Middleware
+ * (express middleware)
+ * --------------------
+ * Logs on execution
+ */
 
-    // mount
-    router.use((req, res, next) => {
-        console.log('Bar middleware triggered');
-        next();
-    });
-
+export default function(req, res, next) {
+    console.log('Bar middleware triggered');
+    next();
 }
 

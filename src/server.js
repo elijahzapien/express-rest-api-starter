@@ -1,42 +1,23 @@
-import d from 'debug';
 import express from 'express';
 import bodyParser from 'body-parser';
+import settings from '../settings';
+import { debugServer } from './debug';
 
 import db from 'db';
-import middleware from 'middleware';
-import routes from 'routes'
+import controllers from 'controllers';
 
 const server = express();
-
-// DEBUGGING
-// ---------
-const debugServer = d('Server');
-const debugDB = d('Server:db');
-const debugMiddleware = d('Server:middleware');
-const debugRoute = d('Server:route');
 
 // CONFIG
 // ------
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 server.use(express.static(__dirname + '/dist'));
+server.set('tokenSecret', settings.db.secret);
 
-// ROUTER
-// ------
-const router = express.Router();
-
-// middleware
-middleware(router, debugMiddleware);
-
-// routes
-routes(router, debugRoute);
-
-server.use('/api', router);
-
-// http://localhost:8080/api
-router.get('/', function(req, res) {
-    res.json({ version: '0.0.1' });
-});
+// ADD CONTROLLERS
+// ---------------
+server.use('/api', controllers);
 
 // START SERVER
 // ------------

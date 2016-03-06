@@ -1,14 +1,31 @@
-import bar from './bar';
+import { debugMiddleware } from '../debug';
 
-export default function(router, debug) {
+import UserModel from '../models/user';
+import userMiddleware from './user';
 
-    // log initialize
-    debug('Adding middleware');
+import { routerUnprotected, routerProtected } from '../router';
+import barMiddleware from './bar';
+import jwtMiddleware from './jwt';
 
-    // mount
-    bar(router);
+export default function() {
+
+    // log start
+    debugMiddleware('Adding middleware');
+
+    // ROUTER
+    // ------
+    // unprotected
+    routerUnprotected.use(barMiddleware);
+
+    // protected
+    routerProtected.use(jwtMiddleware);
+
+    // MODEL
+    // -----
+    //UserModel.schema.pre('save', userMiddleware);
 
     // log complete
-    debug('All middleware added');
+    debugMiddleware('All middleware added');
 
-};
+}
+

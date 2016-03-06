@@ -6,3 +6,4 @@ const FooSchema   = new Schema({
 });
 
 export default mongoose.model('Foo', FooSchema);
+
