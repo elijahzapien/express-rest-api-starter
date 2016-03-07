@@ -1,4 +1,4 @@
-import User from '../../../models/user';
+import User from 'models/user';
 
 export default function(req, res, next) {
     User.remove(
@@ -9,3 +9,4 @@ export default function(req, res, next) {
         }
     );
 }
+

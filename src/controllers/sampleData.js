@@ -14,20 +14,20 @@ const SampleDataRouter = express.Router();
  *
  */
 
-const sampleUser = new User({
-    name: 'Devin',
-    email: 'devin@allday.com',
-    password: 'tornadowrangler',
-    admin: true
-});
-
-const sampleFoo = new Foo({
-    name: 'Devin'
-});
-
 // http://localhost:8080/api/sampleData
 SampleDataRouter.route('/sampleData')
     .post((req, res) => {
+        const sampleUser = new User({
+            name: 'Devin',
+            email: 'devin@allday.com',
+            password: 'tornadowrangler',
+            admin: true
+        });
+
+        const sampleFoo = new Foo({
+            name: 'Devin'
+        });
+
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(sampleUser.password, salt, (err, hash) => {
                 sampleUser.save(err => {

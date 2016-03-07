@@ -4,9 +4,9 @@ import jwt from 'jsonwebtoken';
 
 import User from 'models/user';
 
-const UserRouter = express.Router();
+const AuthenticationRouter = express.Router();
 
-UserRouter.route('/users/authenticate')
+AuthenticationRouter.route('/authenticate')
     .post((req, res, next) => {
         User.findOne(
             { email: req.body.email },
@@ -53,5 +53,5 @@ UserRouter.route('/users/authenticate')
         );
     });
 
-export default UserRouter;
+export default AuthenticationRouter;
 
