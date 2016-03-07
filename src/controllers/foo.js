@@ -1,6 +1,6 @@
 import express from 'express';
 
-import Foo from '../models/foo';
+import Foo from 'models/foo';
 
 const FooRouter = express.Router();
 
