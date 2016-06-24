@@ -1,9 +1,11 @@
 # Express RESTful API Boilerplate
 
-
-- [ECMAScript6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
-- [babel](https://babeljs.io/)
 - [express](http://expressjs.com/)
+- [mongoose](http://mongoosejs.com/)
+
+#### Build Tools
+
+- [babel](https://babeljs.io/)
 
 ## Getting Started
 
@@ -13,17 +15,30 @@
 $ npm install
 ```
 
-#### 2. Run API:
+#### 2. Create Settings Config:
+
+```
+$ npm run setup
+```
+
+Creates a settings.json file in your root directory
+
+TODO: Info on env variables
+
+--connectUrl=""
+--secret=""
+
+#### 3. Run API:
 
 Start a local dev environment:
 
 ```
-$ npm dev
+$ npm run dev
 ```
 
 Start a production build:
 
 ```
-$ npm production
+$ npm run production
 ```
 

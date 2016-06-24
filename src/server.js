@@ -4,7 +4,7 @@ import settings from '../settings';
 import { debugServer } from './debug';
 
 import db from 'db';
-import { UnprotectedRouter, ProtectedRouter }from 'controllers';
+import { UnprotectedRouter, ProtectedRouter } from 'controllers';
 
 const server = express();
 
